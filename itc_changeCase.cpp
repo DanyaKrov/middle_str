@@ -1,6 +1,6 @@
 #include "middle_str.h"
 
-unsigned char itc_registr(unsigned char c)
+unsigned char itc_changeCase(unsigned char c)
 {
     if (97 <= c && c <= 122)
         return c - 32;
