@@ -25,4 +25,5 @@ char itc_sameChar(string str)
             length = 0;
         }
     }
+    return 'A';
 }
