@@ -16,8 +16,10 @@ string itc_maxCharWord(string str)
         }
         else
         {
-            if (max < length)
+            if (max < length){
                 ans = word;
+                max = length;
+            }
             length = 0;
             word = "";
         }
