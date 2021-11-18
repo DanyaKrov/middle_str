@@ -2,6 +2,7 @@
 
 string itc_maxCharWord(string str)
 {
+    bool issp = false;
     long long max = -1, length = 0;
     string word = "";
     string ans = "";
@@ -17,7 +18,8 @@ string itc_maxCharWord(string str)
         }
         else
         {
-            if (max < length){
+            if (max < length && str[i] == ' '){
+                issp = true;
                 ans = word;
                 max = length;
             }
@@ -27,6 +29,8 @@ string itc_maxCharWord(string str)
             word = "";
         }
     }
+    if (!issp)
+        return "error";
     if (length > 0)
         kol++;
     if (kol < 2)
