@@ -2,28 +2,22 @@
 
 string itc_Cezar(string str, int k)
 {
-    long long length = 0, param = 97;
+    k = (k % 26 + 26) % 26;
     string word = "";
     if (str == "")
         return "error";
     for (long long i = 0; str[i] != '\0'; i++)
     {
-        if ((65 <= str[i] && str[i] <= 90) || (97 <= str[i] && str[i] <= 122))
+        if (65 <= str[i] && str[i] <= 90)
+		{
+			word += (str[i] - 65 + k) % 26 + 65;
+		}
+        else if (str[i] >= 97 && str[i] <= 122)
         {
-            param = 97;
-            if (65 <= str[i] && str[i] <= 90)
-                param = 65;
-            if (str[i] - param + k >= 0)
-                word += param + (str[i] - param + k) % 25;
-            else
-                word += param + 25 - (25 + param - str[i]) % 25;
-            length ++;
-        }
-        else
-        {
+			word += (str[i] - 97 + k) % 26 + 97;
+		}
+		else
             word += str[i];
-            length = 0;
-        }
-    }
-    return word;
+	}
+	return word;
 }
