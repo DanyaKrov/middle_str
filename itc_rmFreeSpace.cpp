@@ -2,6 +2,8 @@
 
 string itc_rmFreeSpace(string str)
 {
+    if (str == "")
+        return "";
     string word = "", word1 = "";
     for (long long i = 0; str[i] != '\0'; i++)
     {
