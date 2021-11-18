@@ -5,6 +5,7 @@ string itc_maxCharWord(string str)
     long long max = -1, length = 0;
     string word = "";
     string ans = "";
+    int kol = 0;
     if (str == "")
         return "error";
     for (long long i = 0; str[i] != '\0'; i++)
@@ -20,10 +21,16 @@ string itc_maxCharWord(string str)
                 ans = word;
                 max = length;
             }
+            if (length > 0)
+                kol++;
             length = 0;
             word = "";
         }
     }
+    if (length > 0)
+        kol++;
+    if (kol < 2)
+        return "error";
     if (max < length)
         ans = word;
     return ans;
