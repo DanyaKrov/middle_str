@@ -2,5 +2,5 @@
 
 string itc_decToBase(int num, int base)
 {
-    return false;
+    return "something";
 }
