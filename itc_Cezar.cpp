@@ -2,7 +2,6 @@
 
 string itc_Cezar(string str, int k)
 {
-    k = (k % 26 + 26) % 26;
     string word = "";
     if (str == "")
         return "error";
@@ -10,11 +9,11 @@ string itc_Cezar(string str, int k)
     {
         if (65 <= str[i] && str[i] <= 90)
 		{
-			word += (str[i] - 65 + k) % 26 + 65;
+			word += (str[i] - 65 + ((k % 26 + 26) % 26)) % 26 + 65;
 		}
         else if (str[i] >= 97 && str[i] <= 122)
         {
-			word += (str[i] - 97 + k) % 26 + 97;
+			word += (str[i] - 97 + ((k % 26 + 26) % 26)) % 26 + 97;
 		}
 		else
             word += str[i];
