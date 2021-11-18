@@ -4,21 +4,15 @@ string itc_rmFreeSpace(string str)
 {
     if (str == "")
         return "";
-    string word = "", word1 = "";
+    string word = "";
     for (long long i = 0; str[i] != '\0'; i++)
     {
-        if (str[i] == ' ')
+        if ((i == 0 && str[i] == 32))
         {
-            word1 += str[i];
-        }
-        else
-        {
-            if (word1 != "")
-                word1 = " ";
-            word += word1;
-            word1 = "";
             word += str[i];
         }
+        else if ((str[i] != 32 || str[i + 1] != 32) && (str[i] != 32 || str[i + 1] != '\0'))
+            word += str[i];
     }
     return word;
 }
