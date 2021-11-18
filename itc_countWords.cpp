@@ -2,7 +2,7 @@
 
 int itc_countWords(string str)
 {
-    bool issp = false;
+    bool issp = true;
     long long length = 0, kol = 0;
     if (str == "")
         return 0;
@@ -24,6 +24,6 @@ int itc_countWords(string str)
     if (length > 0)
         kol++;
     if (!issp)
-        kol = 0;
+        return 0;
     return kol;
 }
